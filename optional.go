@@ -159,7 +159,7 @@ func checkOptions(opts Options) error {
 		return ErrInvalidOptions
 	}
 	rv := reflect.ValueOf(opts)
-	if rv.Kind() != reflect.Ptr || rv.IsNil() || rv.Elem().Kind() != reflect.Struct {
+	if rv.Kind() != reflect.Pointer || rv.IsNil() || rv.Elem().Kind() != reflect.Struct {
 		return ErrInvalidOptions
 	}
 	return nil
